@@ -21,8 +21,8 @@ import javax.validation.Valid;
   **/
 
 @Slf4j
-@RestController
 @RequiredArgsConstructor
+@RestController
 public class TransactionController {
     private final TransactionService transactionService;
 
