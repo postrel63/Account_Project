@@ -53,6 +53,6 @@ public class Account {
             throw new AccountException(ErrorCode.INVALID_REQUEST);
 
         }
-        balance =+ amount;
+        balance += amount;
     }
 }

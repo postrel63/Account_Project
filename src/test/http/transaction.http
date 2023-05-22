@@ -1,10 +1,21 @@
-### Create account
+### Use balnace
 POST http://localhost:8080/transaction/use
 Content-Type: application/json
 
 {
   "userId": 1,
-  "accountNumber" : "1000000000",
-  "amount" : 12345
+  "accountNumber" : "1000000001",
+  "amount" : 1000
+
+}
+
+### cancel balnace
+POST http://localhost:8080/transaction/cancel
+Content-Type: application/json
+
+{
+  "transactionId": "95566ee6ac874e16ad5015c883a74442",
+  "accountNumber" : "1000000001",
+  "amount" : 1000
 
 }
