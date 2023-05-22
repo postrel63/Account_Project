@@ -128,7 +128,7 @@ class AccountServiceTest {
     }
 
     @Test
-    @DisplayName("해당 유저 없음 -> 계좌 개설 실패")
+    @DisplayName("해당 유저 없음 -> 계좌 생성 실패")
     void createAccount_UserNotFound() {
         //given
 
@@ -310,15 +310,15 @@ class AccountServiceTest {
         List<AccountDto> accountDtos = accountService.getAccountsByUserId(1L);
 
         //then
-        assertEquals(3,accountDtos.size());
-        assertEquals("1111111111",accountDtos.get(0).getAccountNumber());
-        assertEquals(1000,accountDtos.get(0).getBalance());
-        assertEquals(3,accountDtos.size());
-        assertEquals("1111111111",accountDtos.get(1).getAccountNumber());
-        assertEquals(2000,accountDtos.get(1).getBalance());
-        assertEquals(3,accountDtos.size());
-        assertEquals("1111111111",accountDtos.get(2).getAccountNumber());
-        assertEquals(2000,accountDtos.get(2).getBalance());
+        assertEquals(3, accountDtos.size());
+        assertEquals("1111111111", accountDtos.get(0).getAccountNumber());
+        assertEquals(1000, accountDtos.get(0).getBalance());
+        assertEquals(3, accountDtos.size());
+        assertEquals("1111111111", accountDtos.get(1).getAccountNumber());
+        assertEquals(2000, accountDtos.get(1).getBalance());
+        assertEquals(3, accountDtos.size());
+        assertEquals("1111111111", accountDtos.get(2).getAccountNumber());
+        assertEquals(2000, accountDtos.get(2).getBalance());
 
     }
 
