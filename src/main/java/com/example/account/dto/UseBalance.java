@@ -23,7 +23,9 @@ public class UseBalance {
         @NotNull
         @Min(10)
         @Max(1000_000_000)
-        private Long initialBalance;
+        private Long amount;
+
+
     }
 
     //계좌 생성 시 반환정보
@@ -37,8 +39,18 @@ public class UseBalance {
         private TransactionResultType transactionResult;
         private String transactionId;
         private Long amount;
-        private LocalDateTime registeredAt;
+        private LocalDateTime transactedAt;
 
 
+        public static Response from(TransactionDto transactionDto) {
+            return Response.builder()
+                    .accountNumber(transactionDto.getAccountNumber())
+                    .transactionResult(transactionDto.getTransactionResultType())
+                    .transactionId(transactionDto.getTransactionId())
+                    .amount(transactionDto.getAmount())
+                    .transactedAt(transactionDto.getTransactedAt())
+                    .build();
+
+        }
     }
 }
