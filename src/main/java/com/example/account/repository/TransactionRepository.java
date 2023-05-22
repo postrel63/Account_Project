@@ -13,4 +13,6 @@ import java.util.Optional;
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 //구현하지않고 interface만 만들고 씀
 
+    Optional<Transaction> findByTransactionId(String transactionId);
+
 }
