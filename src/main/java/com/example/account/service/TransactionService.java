@@ -117,7 +117,7 @@ public class TransactionService {
             throw new AccountException(ErrorCode.CANCEL_MUST_FULLY);
         }
         if (transaction.getTransactedAt().isBefore(LocalDateTime.now().minusYears(1)))
-            throw new AccountException(ErrorCode.TOO_OLD_OREDER_TO_CANCEL);
+            throw new AccountException(ErrorCode.TOO_OLD_ORDER_TO_CANCEL);
 
     }
 

@@ -462,7 +462,7 @@ class TransactionServiceTest {
                         "1000000000",
                         CANCEL_AMOUNT));
         //then)
-        assertEquals(ErrorCode.TOO_OLD_OREDER_TO_CANCEL,
+        assertEquals(ErrorCode.TOO_OLD_ORDER_TO_CANCEL,
                 exception.getErrorCode());
     }
 
@@ -512,7 +512,7 @@ class TransactionServiceTest {
         //when
         AccountException exception = assertThrows(AccountException.class,
                 () -> transactionService.queryTransaction("transactionId"));
-        
+
         //then)
         assertEquals(ErrorCode.TRANSACTION_NOT_FOUND, exception.getErrorCode());
     }
