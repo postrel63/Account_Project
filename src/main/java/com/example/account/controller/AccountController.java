@@ -41,16 +41,15 @@ public class AccountController {
     @GetMapping("/account")
     public List<AccountInfo> getAccountsByUserId(
             @RequestParam("user_id") Long userId
-    ){
+    ) {
         //AccountDto -> AccountInfo
-      return accountService.getAccountsByUserId(userId)
-              .stream().map(accountDto -> AccountInfo.builder()
-                      .accountNumber(accountDto.getAccountNumber())
-                      .balance(accountDto.getBalance())
-                      .build())
-              .collect(Collectors.toList());
+        return accountService.getAccountsByUserId(userId)
+                .stream().map(accountDto -> AccountInfo.builder()
+                        .accountNumber(accountDto.getAccountNumber())
+                        .balance(accountDto.getBalance())
+                        .build())
+                .collect(Collectors.toList());
     }
-
 
 
     @GetMapping("/account/{id}")
